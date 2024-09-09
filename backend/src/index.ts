@@ -16,7 +16,8 @@ const io = new Server(server);
 io.on("connection", (socket) => {
   console.log("a user connected");
   setInterval(function () {
-    const dtStr = dayjs().format("DD/MM/YYYY HH:mm:ss");
+    // const dtStr = dayjs().format("DD/MM/YYYY HH:mm:ss");
+    const dtStr = dayjs().format("HH:mm:ss");
     io.sockets.emit("clock", { clock: dtStr });
   }, 1000);
 });
